@@ -23,7 +23,7 @@ We have number of server and build tools preconfigured in application, to use th
 Clone the angular-seed repository using [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git):
 
 ```
-git https://github.com/princesoni1989/angular-js-seed
+git https://github.com/banajit/amber.git
 cd angular-js-seed
 ```
 

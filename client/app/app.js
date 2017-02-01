@@ -13,7 +13,7 @@ angular.module('angularJsSeedApp', [
     $urlRouterProvider
       .otherwise('/');
 
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({enabled:true, requireBase:false})
     $httpProvider.interceptors.push('authInterceptor');
   })
   .run(['$rootScope', '$state', 'Auth', function ($rootScope, $state, Auth) {

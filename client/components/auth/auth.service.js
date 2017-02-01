@@ -22,7 +22,7 @@
         var cb = callback || angular.noop;
         var deferred = $q.defer();
 
-        $http.post(Config.getHost() + '/auth/local', {
+       /* $http.post(Config.getHost() + '/auth/local', {
           email: user.email,
           password: user.password
         }).
@@ -36,7 +36,21 @@
             this.logout();
             deferred.reject(err);
             return cb(err);
-          }.bind(this));
+          }.bind(this));*/
+          $http({
+                method: 'POST',
+                url: Config.getHost() + '/auth/local',
+                data:{email: user.email,password: user.password}
+             }).then(function (data){
+                $cookieStore.put('token', data.token);
+                currentUser = User.get();
+                deferred.resolve(data);
+                return cb();
+             },function (error){
+                 this.logout();
+                  deferred.reject(err);
+                  return cb(err);
+             });
 
         return deferred.promise;
       },

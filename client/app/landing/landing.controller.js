@@ -2,7 +2,7 @@
 
 (function (angular) {
 
-  function landingCtrl(ModalService) {
+  function landingCtrl() {
 
     /**
      * Controller variables

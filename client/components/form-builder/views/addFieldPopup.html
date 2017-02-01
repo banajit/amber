@@ -1,0 +1,73 @@
+<md-dialog aria-label="Add Field">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add {{formAttributes.name}}</h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content layout="row">
+    <!--ng-include src="formAttributes.template"></ng-include-->
+    <div class="field-attributes" flex>
+      <form name="addfield">
+        <div layout="row">
+          <div class="form-item" flex layout-padding>
+            <md-input-container>
+              <label>Label</label>
+              <input name="label" ng-model="form.label" required >
+              <div ng-messages="addfield.label.$error">
+                <div ng-message="required">Label is required.</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div class="form-item" flex layout-padding>
+            <md-input-container>
+              <label>Model</label>
+              <input name="fmodel" ng-model="form.model" required>
+              <div ng-messages="addfield.fmodel.$error">
+                <div ng-message="required">Model is required.</div>
+              </div>
+            </md-input-container>
+          </div>
+        </div>
+        <div layout="row">
+          <div class="form-item" flex layout-padding>
+            <md-input-container>
+              <label>ID</label>
+              <input ng-model="form.id">
+            </md-input-container>
+          </div>
+          <div class="form-item" flex layout-padding>
+            <md-input-container>
+              <label>Class</label>
+              <input ng-model="form.classname">
+            </md-input-container>
+          </div>
+        </div>
+        <div ng-if="formAttributes.type == 'textarea'" layout="row">
+          <div class="form-item" flex layout-padding>
+            <md-input-container>
+              <label>Max Length</label>
+              <input ng-model="form.maxlength">
+            </md-input-container>
+          </div>
+          <div class="form-item" flex layout-padding>
+            <md-input-container>
+              <label>Rows</label>
+              <input ng-model="form.rows">
+            </md-input-container>
+          </div>
+        </div>
+        <div layout="row">
+          <div class="form-item" flex layout-padding>
+            <md-input-container>
+              <label>Placeholder</label>
+              <input ng-model="form.placeholder">
+            </md-input-container>
+          </div>
+        </div>
+        <div>
+          <md-button class="md-raised md-primary" ng-click="addField()">Save</md-button>
+        </div>
+      </form>
+    </div>
+  </md-dialog-content>
+</md-dialog>

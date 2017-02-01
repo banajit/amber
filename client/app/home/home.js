@@ -2,7 +2,7 @@
 
 (function (angular) {
 
-angular.module('angularJsSeedApp')
+angular.module('amberApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('home', {

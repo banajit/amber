@@ -1,0 +1,14 @@
+<!--div class="form-item">
+  <md-input-container>
+    <label>{{obj.label}}</label>
+    <textarea ng-model="obj.value" md-maxlength="{{obj.maxlength != 'undefined' ? obj.maxlength : 150}}" rows="{{obj.rows != 'undefined' ? obj.rows : 5}}" placeholder="{{obj.placeholder}}"></textarea>
+  </md-input-container>
+</div-->
+<div class="form-fields-container" layout="row" layout-wrap>
+  <div class="field-label-container">
+    <label class="field-label">{{obj.label}}</label>
+  </div>
+  <md-input-container flex md-no-float>
+    <textarea ng-model="obj.value" md-maxlength="{{obj.maxlength != 'undefined' ? obj.maxlength : 150}}" rows="{{obj.rows != 'undefined' ? obj.rows : 5}}" placeholder="{{obj.placeholder}}"></textarea>
+  </md-input-container>
+</div>

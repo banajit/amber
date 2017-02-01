@@ -2,7 +2,7 @@
 
 (function (angular) {
 
-angular.module('angularJsSeedApp')
+angular.module('amberApp')
   .directive('footer', function () {
     return {
       templateUrl: 'components/footer/footer.html',

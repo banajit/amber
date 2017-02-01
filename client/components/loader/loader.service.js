@@ -22,7 +22,7 @@
     }
   };
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .factory('LoaderService', loaderService)
 
 })(angular);

@@ -3,7 +3,7 @@
 describe('Controller: SetPasswordCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('angularJsSeedApp'));
+  beforeEach(module('amberApp'));
   var SetPasswordCtrl, scope, fakeLocation, User, q, $state;
 
  /* describe('When token is not a string', function () {
@@ -63,7 +63,7 @@ describe('Controller: SetPasswordCtrl', function () {
       });
     }));
     it('should have a SetPasswordCtrl controller', function () {
-      expect('angularJsSeedApp.SetPasswordCtrl').toBeDefined();
+      expect('amberApp.SetPasswordCtrl').toBeDefined();
     });
   });
 
@@ -98,7 +98,7 @@ describe('Controller: SetPasswordCtrl', function () {
       })
     }));
     it('should have a SetPasswordCtrl controller', function () {
-      expect('angularJsSeedApp.SetPasswordCtrl').toBeDefined();
+      expect('amberApp.SetPasswordCtrl').toBeDefined();
     });
     xdescribe('Function:setPassword', function () {
       var fakeForm = {};

@@ -1,0 +1,135 @@
+{
+	"basic_components": {
+    "display_name": "Basic Components",
+    "fields": [
+      {
+        "fid": 1,
+        "type": "text",
+        "name": "Text Field",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "template": "views/form-templates/textfield.html"
+      },
+      {
+        "fid": 2,
+        "type": "number",
+        "name": "Number",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "template": "views/form-templates/textfield.html"
+      },
+      {
+        "fid": 3,
+        "type": "textarea",
+        "name": "Text Area",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "maxlength": "",
+        "rows": "",
+        "template": "views/form-templates/textarea.html"
+      },
+      {
+        "fid": 4,
+        "type": "select",
+        "name": "Select",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "maxlength": "",
+        "rows": "",
+        "template": "views/form-templates/textarea.html"
+      },
+      {
+        "fid": 5,
+        "type": "checkbox",
+        "name": "Checkbox",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "maxlength": "",
+        "rows": "",
+        "template": "views/form-templates/textarea.html"
+      },
+      {
+        "fid": 6,
+        "type": "radio",
+        "name": "Radio",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "maxlength": "",
+        "rows": "",
+        "template": "views/form-templates/textarea.html"
+      }
+    ]
+  },
+  "special_components": {
+    "display_name": "Special Components",
+    "fields": [
+      {
+        "fid": 7,
+        "type": "email",
+        "name": "Email",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "template": "views/form-templates/textfield.html"
+      },
+      {
+        "fid": 8,
+        "type": "password",
+        "name": "Password",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "template": "views/form-templates/textfield.html"
+      }
+    ]
+  },
+  "layout_components": {
+    "display_name": "Layout Components",
+    "fields": [
+      {
+        "fid": 9,
+        "type": "column",
+        "name": "Column",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "template": "views/form-templates/textfield.html"
+      },
+      {
+        "fid": 10,
+        "type": "fieldgroup",
+        "name": "Field Group",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "template": "views/form-templates/textfield.html"
+      }
+    ]
+  }
+}

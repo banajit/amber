@@ -2,12 +2,17 @@
 
 (function (angular) {
 
-angular.module('angularJsSeedApp', [
+angular.module('amberApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
+  'ngAnimate',
+  'ngMaterial',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'dndLists',
+  'gridster',
+  'vAccordion'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

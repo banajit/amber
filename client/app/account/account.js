@@ -1,7 +1,7 @@
 'use strict';
 
 (function (angular) {
-angular.module('angularJsSeedApp')
+angular.module('amberApp')
   .config(function configuration($stateProvider) {
     $stateProvider
       .state('login', {

@@ -3,7 +3,7 @@
 describe('Controller: ForgotCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('angularJsSeedApp'));
+  beforeEach(module('amberApp'));
 
   var ForgotCtrl, scope, User, fakeState, q;
 

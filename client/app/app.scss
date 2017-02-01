@@ -123,6 +123,144 @@ footer
   }
 }
 /* footer */
+/* form-builder-style */
+.form-builder-container {
+  min-height: 400px;
+  padding: 10px;
+  margin: 0 0 0 20px;
+  border: 1px solid #ddd;
+}
+.clr {
+  clear: both;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+.vAccordion--default v-pane {
+  overflow: visible;
+}
+.vAccordion--default v-pane-header {
+  background: #DDDDDD;
+  margin-bottom: 0;
+  padding: 8px 10px;
+}
+.vAccordion--default v-pane-content > div {
+  padding-bottom: 0;
+}
+.vAccordion--default v-pane-header::after,
+.vAccordion--default v-pane-header::before {
+  right: 10px;
+}
+v-pane.is-expanded v-pane-content {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  overflow: visible;
+  padding: 20px 10px;
+}
+
+ul.field-menu li {
+  background: #1D9B72;
+  border-radius: 3px;
+  color: #fff;
+  cursor: move;
+  margin-bottom: 2px;
+  padding: 8px 10px;
+}
+
+md-dialog {
+  min-width: 800px;
+}
+md-toolbar {
+  background-color: #004974 !important;
+  min-height: 55px;
+}
+.md-toolbar-tools {
+  font-size: 16px;
+  height: 55px;
+}
+md-dialog-content {
+  padding: 20px;
+}
+.form-builder-container li {
+  list-style: none;
+}
+.form-builder-container .dndPlaceholder {
+  background-color: #FFE2F5;
+  display: block;
+  padding: 15px;
+  text-align: center;
+}
+ul.drop-zone {
+  min-height: 300px;
+}
+/*ul.drop-zone li {
+  height: 80px !important;
+}*/
+ul.drop-zone li:hover {
+  background: #FFE2F5;
+}
+
+.form-fields-container {
+  margin: 0;
+}
+.form-fields-container .field-label-container {
+  color: #064976;
+  margin: 0 10px 0 0;
+  padding: 6px 0 0 0;
+}
+.form-fields-container .field-label-container .required-asterisk {
+  color: #cc3333;
+}
+.form-fields-container md-input-container {
+  margin: 0;
+  padding: 0;
+}
+.form-fields-container md-input-container input,
+.form-fields-container md-input-container textarea {
+  border-width: 1px;
+  font-size: 14px;
+  color: rgba(55, 57, 52, 1);
+  padding-left: 10px;
+}
+md-input-container:not(.md-input-invalid).md-input-focused input,
+md-input-container:not(.md-input-invalid).md-input-focused md-select,
+md-input-container:not(.md-input-invalid).md-input-focused textarea,
+md-input-container:not(.md-input-invalid).md-input-focused select {
+  border-width: 2px;
+  border-color: #064976;
+}
+md-input-container.md-input-invalid input,
+md-input-container.md-input-invalid md-select,
+md-input-container.md-input-invalid select {
+  border-width: 2px !important;
+  border-color: #cc3333;
+}
+.form-fields-container md-input-container .md-input.ng-invalid.ng-dirty,
+.form-fields-container md-input-container  md-select.ng-invalid.ng-empty.ng-touched {
+  border-width: 2px;
+}
+input.ng-empty,
+textarea.ng-empty,
+md-select.ng-empty {
+  color: #979594;
+  font-size: 12px;
+  font-style: italic;
+}
+md-select,
+select {
+  border: 1px solid rgba(0,0,0, .12);
+}
+.md-select-value {
+  border: none !important;
+  padding-left: 10px;
+}
+.md-select-placeholder {
+  padding: 0 0 0 10px;
+}
+
+/* form-builder-style */
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;

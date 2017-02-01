@@ -45,7 +45,7 @@
     };
   };
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .controller('ForgotPasswordCtrl', forgotPassword);
 
 })(angular);

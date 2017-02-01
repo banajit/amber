@@ -35,6 +35,6 @@ function loginCtrl($scope, Auth, $state, $window) {
 
   }
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .controller('LoginCtrl',loginCtrl);
 })(angular);

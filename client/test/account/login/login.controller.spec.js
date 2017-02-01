@@ -2,7 +2,7 @@
 
 describe('Controller: LoginCtrl', function () {
   var LoginCtrl, q, rootScope, scope, fakeLocation, Auth, $state, fakeForm;
-  beforeEach(module('angularJsSeedApp'));
+  beforeEach(module('amberApp'));
 
   beforeEach(inject(function ($q, $controller, $rootScope, $httpBackend) {
       q = $q,
@@ -39,7 +39,7 @@ describe('Controller: LoginCtrl', function () {
 //This is success
   it('should have a LoginCtrl controller', function () {
     console.log("LoginCtrl",LoginCtrl)
-    //expect('angularJsSeedApp.LoginCtrl').toBeDefined();
+    //expect('amberApp.LoginCtrl').toBeDefined();
   });
 
   xdescribe('Function:login', function () {

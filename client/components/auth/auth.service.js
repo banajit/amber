@@ -161,6 +161,6 @@
     };
   };
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .factory('Auth', Auth)
 })(angular);

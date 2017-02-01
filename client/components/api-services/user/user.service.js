@@ -2,7 +2,7 @@
 
 (function (angular) {
 
-angular.module('angularJsSeedApp')
+angular.module('amberApp')
   .factory('User', ['$resource', 'Config', function ($resource, Config) {
     return $resource(Config.getHost() + '/api/users/:id/:controller', {
       id: '@_id'

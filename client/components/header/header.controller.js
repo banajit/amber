@@ -16,7 +16,7 @@
   }
 
   //controller declaration
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .controller('HeaderCtrl', header);
 
 })(angular)

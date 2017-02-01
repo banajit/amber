@@ -11,7 +11,7 @@
 
   }
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .controller('LandingCtrl', landingCtrl);
 
 })(angular)

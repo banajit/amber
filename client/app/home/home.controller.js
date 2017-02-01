@@ -16,7 +16,7 @@
     }
   };
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .controller('HomeCtrl', homeCtrl)
 
 })(angular)

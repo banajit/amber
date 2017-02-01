@@ -33,7 +33,7 @@
   }
 
   //factory declaration
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .factory('Config', config)
 
 })(angular);

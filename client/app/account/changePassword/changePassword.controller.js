@@ -22,6 +22,6 @@
     };
   };
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .controller('ChangePasswordCtrl', changePassword)
 })(angular);

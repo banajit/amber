@@ -19,7 +19,7 @@
     };
   }
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .controller('ModalCtrl', ModalCtrl);
 })(angular);
 

@@ -10,6 +10,6 @@
     };
   };
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .factory('Messages', Constants)
 })(angular)

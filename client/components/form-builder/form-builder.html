@@ -1,0 +1,65 @@
+<div id="main-content" layout="row">
+  <div class="form-components" flex="75">
+    <div class="form-information">
+      <div layout="row">
+        <div class="form-fields-container" layout="row" layout-wrap>
+          <div class="field-label-container">
+            <label class="field-label">Form Name</label>
+          </div>
+          <md-input-container flex md-no-float>
+            <input ng-model="module.title" required>
+          </md-input-container>
+        </div>
+        <div class="form-fields-container" flex layout="row" layout-wrap style="margin-left: 20px;">
+          <div class="field-label-container">
+            <label class="field-label">Description</label>
+          </div>
+          <md-input-container flex md-no-float>
+            <input ng-model="module.description">
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+    <div layout="row">
+      <div class="content-left" flex="20">
+        <v-accordion class="vAccordion--default">
+          <v-pane ng-repeat="item in formFields">
+            <v-pane-header>{{item.display_name}}</v-pane-header>
+            <v-pane-content>
+              <ul class="field-menu" dnd-list="item.fields">
+                <li ng-repeat="field in item.fields"
+                    dnd-draggable='field'
+                    dnd-effect-allowed="move"
+                  >
+                  {{field.name}}
+                </li>
+              </ul>
+            </v-pane-content>
+          </v-pane>
+        </v-accordion>
+      </div>
+      <div class="content-middle" flex="80">
+        <div class="form-builder-container" gridster="gridsterOptions">
+          <ul class="drop-zone" dnd-list="module.form" dnd-drop="addFormField(item)">
+            <li
+              ng-repeat="obj in module.form"
+              gridster-item="obj"
+              >
+              <ng-include src="obj.template"></ng-include>
+            </li>
+            <li class="dndPlaceholder">
+              Drop field here
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-right" flex="25">
+    <h3 class="page-header">Sample JSON</h3>
+    <div class="json-container">
+      {{fieldObject.value}}
+      <pre>{{showAsJson}}</pre>
+    </div>
+  </div>
+</div>

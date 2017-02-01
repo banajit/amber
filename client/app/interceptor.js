@@ -2,7 +2,7 @@
 
 (function(angular) {
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .factory('authInterceptor', function ($rootScope, $q, $cookies, $injector) {
     var state;
     return {

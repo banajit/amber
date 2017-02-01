@@ -34,7 +34,7 @@
 
   }
 
-  angular.module('angularJsSeedApp')
+  angular.module('amberApp')
     .controller('SignUpCtrl', signUpCtrl);;
 
 })(angular)

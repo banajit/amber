@@ -4,7 +4,7 @@ describe('Controller: SignupCtrl', function () {
 
 
   // load the controller's module
-  beforeEach(module('angularJsSeedApp'));
+  beforeEach(module('amberApp'));
 
   var SignupCtrl, scope, User, q, $location, $window, $httpBackend, fakeLocation;
 

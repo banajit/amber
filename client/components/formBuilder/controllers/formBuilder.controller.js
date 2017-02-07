@@ -30,7 +30,7 @@
     $scope.addFormField = function(obj) {
       $mdDialog.show({
         controller: 'addFieldPopupCtrl',
-        templateUrl: 'components/form-builder/views/addFieldPopup.html',
+        templateUrl: 'components/formBuilder/views/addFieldPopup.html',
         parent: angular.element(document.body),
         locals: {fieldObj: obj, moduleObj: $scope.module},
         clickOutsideToClose: true

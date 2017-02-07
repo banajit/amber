@@ -5,7 +5,7 @@
 angular.module('amberApp')
   .directive('formBuilder', function () {
     return {
-      templateUrl: 'components/form-builder/views/form-builder.html',
+      templateUrl: 'components/formBuilder/views/formBuilder.html',
       restrict: 'E',
       controller: 'formBuilderCtrl'
     };

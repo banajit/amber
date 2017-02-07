@@ -5,107 +5,28 @@
     </div>
   </md-toolbar>
   <md-dialog-content layout="row">
-    <!--ng-include src="formAttributes.template"></ng-include-->
-    <div class="field-attributes" flex>
+    <div class="form-container" flex>
       <form name="addfield">
         <div ng-cloak>
-          <md-content>
-            <md-tabs md-dynamic-height md-border-bottom>
-              <md-tab label="Basic">
-                <md-content class="md-padding">
-                  <h1 class="md-display-2">Basic</h1>
-                  <p>Basic.</p>
-                </md-content>
-              </md-tab>
-              <md-tab label="Validation">
-                <md-content class="md-padding">
-                  <h1 class="md-display-2">Validation</h1>
-                  <p>Validation.</p>
-                </md-content>
-              </md-tab>
-              <md-tab label="Data">
-                <md-content class="md-padding">
-                  <h1 class="md-display-2">Data</h1>
-                  <p>Data.</p>
-                </md-content>
-              </md-tab>
-            </md-tabs>
-          </md-content>
+          <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Basic">
+              <ng-include src="'components/formBuilder/views/config-templates/basic-settings.html'"></ng-include>
+            </md-tab>
+            <md-tab label="Data">
+              <ng-include src="'components/formBuilder/views/config-templates/data-settings.html'"></ng-include>
+            </md-tab>
+            <md-tab label="Condition">
+              <ng-include src="'components/formBuilder/views/config-templates/condition-settings.html'"></ng-include>
+            </md-tab>
+            <md-tab label="Validation">
+              <ng-include src="'components/formBuilder/views/config-templates/validation-settings.html'"></ng-include>
+            </md-tab>
+          </md-tabs>
         </div>
-        <!--<div layout="row">
-          <div class="form-fields-container" flex layout="row" layout-wrap>
-            <div class="field-label-container">
-              <label class="field-label">Field Label</label>
-            </div>
-            <md-input-container flex md-no-float>
-              <input name="label" ng-model="form.label" required >
-              <div ng-messages="addfield.label.$error">
-                <div ng-message="required">Label is required.</div>
-              </div>
-            </md-input-container>
-          </div>
-          <div class="form-fields-container" flex layout="row" layout-wrap>
-            <div class="field-label-container">
-              <label class="field-label">Model Name</label>
-            </div>
-            <md-input-container flex md-no-float>
-              <input name="fmodel" ng-model="form.model" required>
-              <div ng-messages="addfield.fmodel.$error">
-                <div ng-message="required">Model is required.</div>
-              </div>
-            </md-input-container>
-          </div>
-        </div>
-        <div layout="row">
-          <div class="form-fields-container" flex layout="row" layout-wrap>
-            <div class="field-label-container">
-              <label class="field-label">ID</label>
-            </div>
-            <md-input-container flex md-no-float>
-              <input ng-model="form.id">
-            </md-input-container>
-          </div>
-          <div class="form-fields-container" flex layout="row" layout-wrap>
-            <div class="field-label-container">
-              <label class="field-label">Class</label>
-            </div>
-            <md-input-container flex md-no-float>
-              <input ng-model="form.classname">
-            </md-input-container>
-          </div>
-        </div>
-        <div ng-if="formAttributes.type == 'textarea'" layout="row">
-          <div class="form-fields-container" flex layout="row" layout-wrap>
-            <div class="field-label-container">
-              <label class="field-label">Max Length</label>
-            </div>
-            <md-input-container flex md-no-float>
-              <input type="number" ng-model="form.maxlength">
-            </md-input-container>
-          </div>
-          <div class="form-fields-container" flex layout="row" layout-wrap>
-            <div class="field-label-container">
-              <label class="field-label">Rows</label>
-            </div>
-            <md-input-container flex md-no-float>
-              <input type="number" ng-model="form.rows">
-            </md-input-container>
-          </div>
-        </div>
-        <div layout="row">
-          <div class="form-fields-container" flex layout="row" layout-wrap>
-            <div class="field-label-container">
-              <label class="field-label">Placeholder</label>
-            </div>
-            <md-input-container flex md-no-float>
-              <input ng-model="form.placeholder">
-            </md-input-container>
-          </div>
-        </div>
-        <div>
-          <md-button class="md-raised md-primary" ng-click="addField()">Save</md-button>
-        </div>-->
       </form>
     </div>
   </md-dialog-content>
+  <md-dialog-actions>
+    <md-button class="md-raised md-primary" ng-click="addField()">Save</md-button>
+  </md-dialog-actions>
 </md-dialog>

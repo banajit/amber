@@ -1,0 +1,13 @@
+<div class="field-attributes">
+  <div layout="row" ng-if="formAttributes.type == 'text' || formAttributes.type == 'number'">
+    <div class="form-fields-container column1" flex="50" layout="row" layout-wrap>
+      <div class="field-label-container">
+        <label class="field-label">Default Value</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <input ng-if="formAttributes.type == 'text'" name="defaultValue" type="text" ng-model="form.defaultValue">
+        <input ng-if="formAttributes.type == 'number'" name="defaultValue" type="number" ng-model="form.defaultValue">
+      </md-input-container>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'font-awesome/scss/font-awesome';
@@ -176,23 +177,29 @@ ul.field-menu li {
 
 md-dialog {
   min-width: 800px;
+  md-toolbar {
+    background-color: #004974 !important;
+    min-height: 55px;
+  }
+  md-dialog-content {
+    padding: 20px;
+  }
+  md-dialog-actions {
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
 }
-md-toolbar {
-  background-color: #004974 !important;
-  min-height: 55px;
-}
+
 .md-toolbar-tools {
   font-size: 16px;
   height: 55px;
 }
-md-dialog-content {
-  padding: 20px;
-}
 .form-builder-container li {
   list-style: none;
+  padding: 10px 5px;
 }
 .form-builder-container .dndPlaceholder {
-  background-color: #FFE2F5;
+  border: 1px dashed #DDDDDD;
   display: block;
   padding: 15px;
   text-align: center;
@@ -204,31 +211,53 @@ ul.drop-zone {
   height: 80px !important;
 }*/
 ul.drop-zone li:hover {
-  background: #FFE2F5;
+  border: 1px dashed #ddd;
 }
 
 .form-fields-container {
   margin: 0;
+  .field-label-container {
+    color: #064976;
+    margin: 0 10px 0 0;
+    padding: 6px 0 0 0;
+    .required-asterisk {
+      color: #cc3333;
+    }
+  }
+  md-input-container {
+    margin: 0;
+    padding: 0;
+    input,
+    textarea {
+      border-width: 1px;
+      font-size: 14px;
+      color: rgba(55, 57, 52, 1);
+      padding-left: 10px;
+    }
+    input.ng-empty,
+    textarea.ng-empty,
+    md-select.ng-empty {
+      color: #979594;
+      font-size: 12px;
+      font-style: italic;
+    }
+    .md-input.ng-invalid.ng-dirty,
+    md-select.ng-invalid.ng-empty.ng-touched {
+      border-width: 2px;
+    }
+    md-select,
+    select {
+      border: 1px solid rgba(0,0,0, .12);
+    }
+  }
 }
-.form-fields-container .field-label-container {
-  color: #064976;
-  margin: 0 10px 0 0;
-  padding: 6px 0 0 0;
+.column1 {
+  margin-right: 10px;
 }
-.form-fields-container .field-label-container .required-asterisk {
-  color: #cc3333;
+.column2 {
+  margin-left: 10px;
 }
-.form-fields-container md-input-container {
-  margin: 0;
-  padding: 0;
-}
-.form-fields-container md-input-container input,
-.form-fields-container md-input-container textarea {
-  border-width: 1px;
-  font-size: 14px;
-  color: rgba(55, 57, 52, 1);
-  padding-left: 10px;
-}
+
 md-input-container:not(.md-input-invalid).md-input-focused input,
 md-input-container:not(.md-input-invalid).md-input-focused md-select,
 md-input-container:not(.md-input-invalid).md-input-focused textarea,
@@ -242,21 +271,7 @@ md-input-container.md-input-invalid select {
   border-width: 2px !important;
   border-color: #cc3333;
 }
-.form-fields-container md-input-container .md-input.ng-invalid.ng-dirty,
-.form-fields-container md-input-container  md-select.ng-invalid.ng-empty.ng-touched {
-  border-width: 2px;
-}
-input.ng-empty,
-textarea.ng-empty,
-md-select.ng-empty {
-  color: #979594;
-  font-size: 12px;
-  font-style: italic;
-}
-md-select,
-select {
-  border: 1px solid rgba(0,0,0, .12);
-}
+
 .md-select-value {
   border: none !important;
   padding-left: 10px;
@@ -264,14 +279,19 @@ select {
 .md-select-placeholder {
   padding: 0 0 0 10px;
 }
+md-tabs {
+  md-tabs-content-wrapper {
+    padding: 20px 0 0;
+  }
+}
 
 /* form-builder-style */
 
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 // Component styles are injected through grunt

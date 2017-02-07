@@ -1,0 +1,54 @@
+<div class="field-attributes">
+  <div layout="row">
+    <div class="form-fields-container column1" flex layout="row" layout-wrap>
+      <div class="field-label-container">
+        <label class="field-label">Field Label</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <input name="label" type="text" ng-model="form.label" required>
+        <div ng-messages="addfield.label.$error">
+          <div ng-message="required">Label is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+    <div class="form-fields-container column2" flex layout="row" layout-wrap>
+      <div class="field-label-container">
+        <label class="field-label">Model</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <input name="fmodel" ng-model="form.model" required>
+        <div ng-messages="addfield.fmodel.$error">
+          <div ng-message="required">Model is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+  </div>
+  <div layout="row">
+    <div class="form-fields-container column1" flex layout="row" layout-wrap>
+      <div class="field-label-container">
+        <label class="field-label">Class</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <input type="text" ng-model="form.classname">
+      </md-input-container>
+    </div>
+    <div class="form-fields-container column2" flex layout="row" layout-wrap>
+      <div class="field-label-container">
+        <label class="field-label">Placeholder</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <input type="text" ng-model="form.placeholder">
+      </md-input-container>
+    </div>
+  </div>
+  <div layout="row">
+    <div class="form-fields-container" flex layout="row" layout-wrap>
+      <div class="field-label-container">
+        <label class="field-label">Description</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <input type="text" ng-model="form.description">
+      </md-input-container>
+    </div>
+  </div>
+</div>

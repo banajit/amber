@@ -6,9 +6,11 @@
     /**
      * Controller variable
      */
-    $scope.form = {};
-    $scope.moduleObj = locals.moduleObj;
-    $scope.formAttributes = locals.fieldObj;
+    function init() {
+      $scope.form = {};
+      $scope.moduleObj = locals.moduleObj;
+      $scope.formAttributes = locals.fieldObj;
+    }
 
     $scope.addField = function() {
       console.log('Testing');
@@ -19,6 +21,7 @@
       };
       $mdDialog.hide($scope.returnData);
     };
+    init();
   }
 
   angular.module('amberApp')

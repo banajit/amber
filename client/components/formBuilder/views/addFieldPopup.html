@@ -1,14 +1,38 @@
 <md-dialog aria-label="Add Field">
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <h2>Add {{formAttributes.name}}</h2>
+      <h2>{{formAttributes.name}} Component</h2>
     </div>
   </md-toolbar>
   <md-dialog-content layout="row">
     <!--ng-include src="formAttributes.template"></ng-include-->
     <div class="field-attributes" flex>
       <form name="addfield">
-        <div layout="row">
+        <div ng-cloak>
+          <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+              <md-tab label="Basic">
+                <md-content class="md-padding">
+                  <h1 class="md-display-2">Basic</h1>
+                  <p>Basic.</p>
+                </md-content>
+              </md-tab>
+              <md-tab label="Validation">
+                <md-content class="md-padding">
+                  <h1 class="md-display-2">Validation</h1>
+                  <p>Validation.</p>
+                </md-content>
+              </md-tab>
+              <md-tab label="Data">
+                <md-content class="md-padding">
+                  <h1 class="md-display-2">Data</h1>
+                  <p>Data.</p>
+                </md-content>
+              </md-tab>
+            </md-tabs>
+          </md-content>
+        </div>
+        <!--<div layout="row">
           <div class="form-fields-container" flex layout="row" layout-wrap>
             <div class="field-label-container">
               <label class="field-label">Field Label</label>
@@ -80,7 +104,7 @@
         </div>
         <div>
           <md-button class="md-raised md-primary" ng-click="addField()">Save</md-button>
-        </div>
+        </div>-->
       </form>
     </div>
   </md-dialog-content>

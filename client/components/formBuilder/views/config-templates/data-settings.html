@@ -1,12 +1,72 @@
 <div class="field-attributes">
+
   <div layout="row" ng-if="formAttributes.type == 'text' || formAttributes.type == 'number'">
     <div class="form-fields-container column1" flex="50" layout="row" layout-wrap>
       <div class="field-label-container">
         <label class="field-label">Default Value</label>
       </div>
       <md-input-container flex md-no-float>
-        <input ng-if="formAttributes.type == 'text'" name="defaultValue" type="text" ng-model="form.defaultValue">
-        <input ng-if="formAttributes.type == 'number'" name="defaultValue" type="number" ng-model="form.defaultValue">
+        <input ng-if="formAttributes.type == 'text'" name="defaultValue" type="text" ng-model="form.defaultValue" placeholder="Default Value">
+        <input ng-if="formAttributes.type == 'number'" name="defaultValue" type="number" ng-model="form.defaultValue" placeholder="Default Value">
+      </md-input-container>
+    </div>
+  </div>
+
+
+  <div ng-if="formAttributes.type == 'select'" layout-padding>
+    <div class="form-fields-container" layout="row" flex="50">
+      <div class="field-label-container">
+        <label class="field-label">Data source type</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <md-select ng-model="form.selectedDataSource">
+          <md-option ng-repeat="options in ModulePopup.selectDataSourceOptions" value="{{options.key}}">
+            {{options.value}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+    <div ng-init="ModulePopup.addMore()" class="form-fields-container" layout="row" ng-if="form.selectedDataSource == 'values'" layout-wrap>
+
+      <div layout="row" flex="100">
+        <div class="field-label-container" layout="column" flex="20">
+          <span class="field-label">Label</span>
+        </div>
+        <div class="field-label-container" layout="column" flex="80">
+          <span class="field-label">Value</span>
+        </div>
+      </div>
+
+      <div layout="row" flex="100" ng-repeat="values in form.selectList">
+        <div class="field-label-container" layout="column" flex="20">
+          <md-input-container>
+            <input type="text" ng-model="values.key">
+          </md-input-container>
+        </div>
+
+        <div class="field-label-container" layout="column" flex="40">
+          <md-input-container>
+            <input type="text"  ng-model="values.value">
+          </md-input-container>
+        </div>
+
+        <div class="field-label-container"  layout="column" flex="5">
+          <md-button ng-click="form.selectList.splice($index, 1)" type="submit">Remove</md-button>
+        </div>
+      </div>
+
+      <div>
+        <md-button ng-click="ModulePopup.addMore()" type="submit">Add value</md-button>
+      </div>
+    </div>
+
+    <div class="form-fields-container" layout="row" ng-if="ModulePopup.selectedDataSource == 'rawJson'">
+      <div class="field-label-container">
+        <label class="field-label">Data Source Raw Json</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <textarea ng-model="jsonVal" md-maxlength="150" rows="5" placeholder=""></textarea>
       </md-input-container>
     </div>
   </div>

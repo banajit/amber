@@ -1,0 +1,12 @@
+{"slideUrls": [
+    {
+      "url": "graphEditor"
+    },
+    {
+      "url": "graphBrowser"
+    },
+    {
+      "url": "http://localhost/test/index.html",
+      "siteWidth": 1024
+    }
+  ]}

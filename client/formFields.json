@@ -11,7 +11,7 @@
         "class": "",
         "model": "",
         "placeholder": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/textfield.html"
       },
       {
         "fid": 2,
@@ -22,7 +22,7 @@
         "class": "",
         "model": "",
         "placeholder": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/textfield.html"
       },
       {
         "fid": 3,
@@ -35,7 +35,7 @@
         "placeholder": "",
         "maxlength": "",
         "rows": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/textfield.html"
       },
       {
         "fid": 4,
@@ -48,7 +48,7 @@
         "placeholder": "",
         "maxlength": "",
         "rows": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/select.html"
       },
       {
         "fid": 5,
@@ -61,7 +61,7 @@
         "placeholder": "",
         "maxlength": "",
         "rows": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/textfield.html"
       },
       {
         "fid": 6,
@@ -74,7 +74,7 @@
         "placeholder": "",
         "maxlength": "",
         "rows": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/textfield.html"
       }
     ]
   },
@@ -90,7 +90,7 @@
         "class": "",
         "model": "",
         "placeholder": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/textfield.html"
       },
       {
         "fid": 8,
@@ -101,7 +101,7 @@
         "class": "",
         "model": "",
         "placeholder": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/textfield.html"
       }
     ]
   },
@@ -117,7 +117,7 @@
         "class": "",
         "model": "",
         "placeholder": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/textfield.html"
       },
       {
         "fid": 10,
@@ -128,7 +128,7 @@
         "class": "",
         "model": "",
         "placeholder": "",
-        "template": "components/form-builder/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/textfield.html"
       }
     ]
   }

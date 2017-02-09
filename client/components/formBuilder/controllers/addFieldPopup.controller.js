@@ -25,9 +25,23 @@
         $scope.form['selectList'].push(formBuilderService.getSelectList());
       }
     }
+    ModulePopup.isFormValid = true;
+    //parse json object
+    ModulePopup.parseJson = function(inputJson) {
+      if(formBuilderService.validateJson(inputJson)) {
+        $scope.form.selectList = JSON.parse(inputJson);
+        ModulePopup.isFormValid = true;
+      }
+      else {
+        ModulePopup.isFormValid = false;
+      }
+    }
 
+    //check for valid json
+    ModulePopup.validateJson = function(text) {
+      return formBuilderService.validateJson(text);
+    }
     $scope.addField = function() {
-      console.log('Testing', $scope.formAttributes);
       $scope.form.type = $scope.formAttributes.type;
       $scope.form.template = $scope.formAttributes.template;
       $scope.returnData = {

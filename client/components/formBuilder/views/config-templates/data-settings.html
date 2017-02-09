@@ -13,13 +13,13 @@
   </div>
 
 
-  <div ng-if="formAttributes.type == 'select'" layout-padding>
+  <div ng-if="formAttributes.type == 'select' || formAttributes.type == 'radio'" layout-padding>
     <div class="form-fields-container" layout="row" flex="50">
       <div class="field-label-container">
         <label class="field-label">Data source type</label>
       </div>
       <md-input-container flex md-no-float>
-        <md-select ng-model="form.selectedDataSource">
+        <md-select required="true" ng-model="form.selectedDataSource">
           <md-option ng-repeat="options in ModulePopup.selectDataSourceOptions" value="{{options.key}}">
             {{options.value}}
           </md-option>
@@ -33,7 +33,7 @@
         <div class="field-label-container" layout="column" flex="20">
           <span class="field-label">Label</span>
         </div>
-        <div class="field-label-container" layout="column" flex="80">
+        <div class="field-label-container" layout="column" flex="40">
           <span class="field-label">Value</span>
         </div>
       </div>
@@ -50,23 +50,22 @@
             <input type="text"  ng-model="values.value">
           </md-input-container>
         </div>
-
-        <div class="field-label-container"  layout="column" flex="5">
-          <md-button ng-click="form.selectList.splice($index, 1)" type="submit">Remove</md-button>
-        </div>
+        <md-button ng-click="form.selectList.splice($index, 1)" class="md-fab md-mini" aria-label="Remove">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </md-button>
       </div>
 
       <div>
-        <md-button ng-click="ModulePopup.addMore()" type="submit">Add value</md-button>
+        <md-button class="md-raised" ng-click="ModulePopup.addMore()" type="submit">Add value</md-button>
       </div>
     </div>
 
-    <div class="form-fields-container" layout="row" ng-if="ModulePopup.selectedDataSource == 'rawJson'">
+    <div class="form-fields-container" layout="row" ng-if="form.selectedDataSource == 'rawJson'">
       <div class="field-label-container">
         <label class="field-label">Data Source Raw Json</label>
       </div>
       <md-input-container flex md-no-float>
-        <textarea ng-model="jsonVal" md-maxlength="150" rows="5" placeholder=""></textarea>
+        <textarea required="true" ng-valid="ModulePopup.validateJson(inputJson)" ng-change="ModulePopup.parseJson(inputJson)" ng-model="inputJson" rows="5" placeholder=""></textarea>
       </md-input-container>
     </div>
   </div>

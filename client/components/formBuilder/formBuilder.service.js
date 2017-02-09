@@ -19,7 +19,16 @@
         ];
       },
       getSelectList: function() {
-         return {key: 'keys', value: "Values"};
+         return {key: '', value: ''};
+      },
+      validateJson: function(text) {
+        if (!angular.isUndefined(text) && /^[\],:{}\s]*$/.test(text.replace(/\\["\\\/bfnrtu]/g, '@').
+        replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
+        replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+          return true;
+        }else{
+          return false;
+        }
       }
     }
   }

@@ -1,3 +1,35 @@
 <div class="field-attributes">
-  Condition Settings Content Here
+  <div layout-padding>
+    <div class="form-fields-container" layout="row" flex="50">
+      <div class="field-label-container">
+        <label class="field-label">The component should display</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <md-select ng-model="form.conditional.show">
+          <md-option  value="true">TRUE</md-option>
+          <md-option  value="false">FALSE</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+    <div ng-if="form.conditional.show != undefined" class="form-fields-container" layout="row" flex="50">
+      <div class="field-label-container">
+        <label class="field-label">When the form component</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <md-select ng-required="true" ng-model="form.conditional.when">
+          <md-option ng-repeat="obj in moduleObj.form" value="{{obj.label}}">
+            {{obj.label}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+    <div ng-if="form.conditional.show != undefined" class="form-fields-container" flex="50" layout="row">
+      <div class="field-label-container">
+        <label class="field-label">Has the value</label>
+      </div>
+      <md-input-container flex md-no-float>
+        <input ng-required="true" type="text" ng-model="form.conditional.eq">
+      </md-input-container>
+    </div>
+  </div>
 </div>

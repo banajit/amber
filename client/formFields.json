@@ -74,7 +74,7 @@
         "placeholder": "",
         "maxlength": "",
         "rows": "",
-        "template": "components/formBuilder/views/form-templates/textfield.html"
+        "template": "components/formBuilder/views/form-templates/radio.html"
       }
     ]
   },

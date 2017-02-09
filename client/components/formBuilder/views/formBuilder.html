@@ -7,7 +7,7 @@
             <label class="field-label">Form Name</label>
           </div>
           <md-input-container flex md-no-float>
-            <input ng-model="module.title" required>
+            <input ng-model="module.title" palceholder="" required>
           </md-input-container>
         </div>
         <div class="form-fields-container" flex layout="row" layout-wrap style="margin-left: 20px;">
@@ -41,8 +41,7 @@
       <div class="content-middle" flex="80">
         <div class="form-builder-container" gridster="gridsterOptions">
           <ul class="drop-zone" dnd-list="module.form" dnd-drop="addFormField(item)">
-            <li
-              ng-repeat="obj in module.form"
+            <li ng-if="obj.conditional.show" ng-repeat="obj in module.form"
               gridster-item="obj"
               >
               <ng-include src="obj.template"></ng-include>

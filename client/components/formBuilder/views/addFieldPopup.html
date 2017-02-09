@@ -27,6 +27,6 @@
     </div>
   </md-dialog-content>
   <md-dialog-actions>
-    <md-button class="md-raised md-primary" ng-click="addField()">Save</md-button>
+    <md-button class="md-raised md-primary" ng-click="addField()" ng-disabled="!addfield.$valid || !ModulePopup.isFormValid">Save</md-button>
   </md-dialog-actions>
 </md-dialog>

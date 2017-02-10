@@ -44,6 +44,20 @@
       });
     };
 
+    //decide if component is visible
+    $scope.isComponentVisible = function(component) {
+       $scope.moduleObject = _.indexBy($scope.module.form, 'key');
+       if (component.hasOwnProperty('conditional') && $scope.moduleObject[component.conditional.when].value == component.conditional.eq) {
+          if(component.conditional.show == 'true') {
+            return true;
+          }
+          else {
+            return false;
+          }
+       }
+       return true;
+    }
+
     $scope.$watch('module', function(model) {
       $scope.showAsJson = angular.toJson(model, true);
     }, true);

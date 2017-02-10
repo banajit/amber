@@ -43,6 +43,7 @@
     }
     $scope.addField = function() {
       $scope.form.type = $scope.formAttributes.type;
+      $scope.form.key = formBuilderService.convertCamelCase($scope.form.label) + Date.now();
       $scope.form.template = $scope.formAttributes.template;
       $scope.returnData = {
         'form': $scope.form

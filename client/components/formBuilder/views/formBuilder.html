@@ -41,7 +41,7 @@
       <div class="content-middle" flex="80">
         <div class="form-builder-container" gridster="gridsterOptions">
           <ul class="drop-zone" dnd-list="module.form" dnd-drop="addFormField(item)">
-            <li ng-if="obj.conditional.show" ng-repeat="obj in module.form"
+            <li ng-if="isComponentVisible(obj)" ng-repeat="obj in module.form track by $index"
               gridster-item="obj"
               >
               <ng-include src="obj.template"></ng-include>

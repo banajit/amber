@@ -48,12 +48,8 @@
     $scope.isComponentVisible = function(component) {
        $scope.moduleObject = _.indexBy($scope.module.form, 'key');
        if (component.hasOwnProperty('conditional') && $scope.moduleObject[component.conditional.when].value == component.conditional.eq) {
-          if(component.conditional.show == 'true') {
-            return true;
-          }
-          else {
-            return false;
-          }
+          var isTrueSet = (component.conditional.show == 'true');
+          return isTrueSet;
        }
        return true;
     }

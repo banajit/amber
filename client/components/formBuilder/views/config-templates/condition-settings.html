@@ -16,7 +16,7 @@
         <label class="field-label">When the form component</label>
       </div>
       <md-input-container flex md-no-float>
-        <md-select ng-required="true" ng-model="form.conditional.when">
+        <md-select ng-model="form.conditional.when">
           <md-option ng-repeat="obj in moduleObj.form" value="{{obj.key}}">
             {{obj.label}}
           </md-option>

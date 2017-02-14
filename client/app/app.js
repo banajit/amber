@@ -2,47 +2,37 @@
 
 (function (angular) {
 
-angular.module('amberApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngAnimate',
-  'ngMaterial',
-  'ui.router',
-  'ui.bootstrap',
-  'dndLists',
-  'gridster',
-  'vAccordion'
+var amberApp = angular.module('amberApp', [
+'ngCookies',
+'ngResource',
+'ngSanitize',
+'ngAnimate',
+'ngMaterial',
+'ui.router',
+'ui.bootstrap',
+'dndLists',
+'gridster',
+'vAccordion',
+'elasticsearch'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $animateProvider) {
     $urlRouterProvider
       .otherwise('/');
-
-    $locationProvider.html5Mode({enabled:true, requireBase:false})
+    $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
   })
-  .run(['$rootScope', '$state', 'Auth', function ($rootScope, $state, Auth) {
-    // Redirect to login if route requires auth and the user is not logged in
-    $rootScope.$on('$stateChangeStart', function(event, next) {
-      Auth.isLoggedInAsync(function(loggedIn) {
-        //check for user authentication
-        if (!loggedIn && next.authenticate) {
-          event.preventDefault();
-          $state.go('login');
-        }
+  .run(['$rootScope', '$state', function ($rootScope, $state) {
 
-        //navigate to home if user is already authenticated
-        if(loggedIn && (next.name === 'login' || next.name === 'landing')){
-          event.preventDefault();
-          $state.go('home');
-        }
-
-        if (next.authenticate && !loggedIn) {
-          event.preventDefault();
-          $state.go('login');
-        }
-      });
-    });
   }]);
-
+  var initInjector = angular.injector(['ng']);
+  var $http = initInjector.get('$http');
+  var $q = initInjector.get('$q');
+  var configData = $http.get('config.json?ts=' + Date.now(), {cache: false});
+  $q.all([configData]).then(function(values) {
+      amberApp.constant('CONFIG', values[0].data);
+      angular.element(document).ready(function() {
+        angular.bootstrap(document, ['amberApp']);
+      });
+  });
 })(angular);
+

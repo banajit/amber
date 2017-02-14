@@ -2,7 +2,7 @@
 'use strict';
 (function (angular) {
 
-  function formBuilderCtrl(formBuilderService, $scope, $mdDialog) {
+  function formBuilderCtrl(formBuilderService, $scope, $mdDialog, queryEngineSrv) {
     /**
      * Controller variable
      */
@@ -53,6 +53,9 @@
        }
        return true;
     }
+
+   
+
 
     $scope.$watch('module', function(model) {
       $scope.showAsJson = angular.toJson(model, true);

@@ -8,4 +8,15 @@
       </md-input-container>
     </div>
   </div>
+  <div layout="row" ng-if="form.required">
+    <div class="form-fields-container" flex layout="row" layout-wrap>
+      <div class="field-label-container">
+        <label class="field-label">Required Message</label>
+        <!--div class="field-description">This message will display when the below field is empty.</label-->
+      </div>
+      <md-input-container flex md-no-float>
+        <input type="text" placeholder="{{obj.placeholder}}" ng-model="form.requiredMessage" ng-required="obj.required" />
+      </md-input-container>
+    </div>
+  </div>
 </div>

@@ -27,6 +27,14 @@
       'description': "",
       'form': []
     };
+    $scope.rangeOperators = {
+      '>': '>',
+      '<': '<',
+      '=': '=',
+      '>=': '>=',
+      '<=': '<=',
+      'range': 'Range'
+    };
     $scope.addFormField = function(obj) {
       $mdDialog.show({
         controller: 'addFieldPopupCtrl',

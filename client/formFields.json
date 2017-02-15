@@ -102,6 +102,17 @@
         "model": "",
         "placeholder": "",
         "template": "components/formBuilder/views/form-templates/textfield.html"
+      },
+      {
+        "fid": 9,
+        "type": "range",
+        "name": "Range Field",
+        "label": "",
+        "id": "",
+        "class": "",
+        "model": "",
+        "placeholder": "",
+        "template": "components/formBuilder/views/form-templates/rangefield.html"
       }
     ]
   },
@@ -109,7 +120,7 @@
     "display_name": "Layout Components",
     "fields": [
       {
-        "fid": 9,
+        "fid": 10,
         "type": "column",
         "name": "Column",
         "label": "",
@@ -120,7 +131,7 @@
         "template": "components/formBuilder/views/form-templates/textfield.html"
       },
       {
-        "fid": 10,
+        "fid": 11,
         "type": "fieldgroup",
         "name": "Field Group",
         "label": "",

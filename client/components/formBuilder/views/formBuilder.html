@@ -51,13 +51,16 @@
             </li>
           </ul>
         </div>
+        <div class="form-builder-action" layout="row" layout-align="center center">
+          <md-button class="md-raised md-primary" ng-click="cancelForm()">Cancel</md-button>
+          <md-button class="md-raised md-primary" ng-click="addForm()">Save</md-button>
+        </div>
       </div>
     </div>
   </div>
   <div class="content-right" flex="25">
     <h3 class="page-header">Sample JSON</h3>
     <div class="json-container">
-      {{fieldObject.value}}
       <pre>{{showAsJson}}</pre>
     </div>
   </div>

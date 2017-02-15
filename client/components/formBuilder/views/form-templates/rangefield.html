@@ -1,0 +1,59 @@
+<div class="range-fields-container" layout="row">
+  <div class="form-fields-container" layout="row" layout-wrap>
+    <div class="field-label-container">
+      <label class="field-label">{{obj.label}}</label>
+      <span ng-if="obj.required" class="required-asterisk">*</span>
+      <span class="field-description" ng-if="obj.description != 'undefined' || obj.description != ''">
+        <i class="fa fa-question-circle-o" aria-hidden="true">
+          <md-tooltip md-direction="top">{{obj.description}}</md-tooltip>
+        </i>
+      </span>
+    </div>
+    <md-input-container flex md-no-float>
+      <md-select ng-model="obj.range.operator">
+        <md-option ng-repeat="(key, rng) in rangeOperators" value="{{key}}">
+          {{rng}}
+        </md-option>
+      </md-select>
+      <div ng-messages="addfield.label.$error">
+        <div ng-message="required">{{obj.requiredMessage}}</div>
+      </div>
+    </md-input-container>
+  </div>
+  <div class="form-fields-container" ng-if="obj.range.operator == '>' || obj.range.operator == '>=' || obj.range.operator == 'range'" layout="row" layout-wrap>
+    <div class="field-label-container">
+      <label class="field-label">Min</label>
+      <span class="required-asterisk">*</span>
+    </div>
+    <md-input-container flex md-no-float>
+      <input type="number" placeholder="Min" ng-model="obj.range.min" required/>
+      <div ng-messages="addfield.label.$error">
+        <div ng-message="required">Min value is required.</div>
+      </div>
+    </md-input-container>
+  </div>
+  <div class="form-fields-container" ng-if="obj.range.operator == '<' || obj.range.operator == '<=' || obj.range.operator == 'range'" layout="row" layout-wrap>
+    <div class="field-label-container">
+      <label class="field-label">Max</label>
+      <span class="required-asterisk">*</span>
+    </div>
+    <md-input-container flex md-no-float>
+      <input type="number" placeholder="Max" ng-model="obj.range.max" required/>
+      <div ng-messages="addfield.label.$error">
+        <div ng-message="required">Max value is required.</div>
+      </div>
+    </md-input-container>
+  </div>
+  <div class="form-fields-container" ng-if="obj.range.operator == '='" layout="row" layout-wrap>
+    <div class="field-label-container">
+      <label class="field-label">Value</label>
+      <span class="required-asterisk">*</span>
+    </div>
+    <md-input-container flex md-no-float>
+      <input type="number" placeholder="Value" ng-model="obj.range.value" required/>
+      <div ng-messages="addfield.label.$error">
+        <div ng-message="required">Value is required.</div>
+      </div>
+    </md-input-container>
+  </div>
+</div>

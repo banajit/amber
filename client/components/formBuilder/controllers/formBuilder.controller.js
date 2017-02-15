@@ -61,8 +61,13 @@
        }
        return true;
     }
+    var query = { match: {'name': 'anwar'} };
+    queryEngineSrv.getSearchResult('ambermeta', 'customer', query).then(function (data) {
+       console.log('queryCount', data);
+    });
 
-   
+
+
 
 
     $scope.$watch('module', function(model) {

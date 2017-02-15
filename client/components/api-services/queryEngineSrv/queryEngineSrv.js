@@ -8,24 +8,30 @@
    */
   function queryEngineSrv(client) {
     return {
-      getVariableList: function () {
-       /* client.search({
-          index: 'ambermeta',
-          //type: 'customer',
-          body: {
-            query: {
-              match: { name: 'anwar' }
-            }
-          }
-        }, function (error, response) {
-          console.log('response', response);
-        });*/
+      getFieldStats: function (index_name, fields) {
         return client.fieldStats({
-          index: 'ambermeta',
-          fields: 'name'
+          index: index_name,
+          fields: fields
 
         });
-        //return $http.get('formFields.json');
+      },
+      getResultCount: function(index_name, type, query) {
+        return client.count({
+          index: index_name,
+          type: type,
+          body: {
+            query: query
+          }
+        });
+      },
+      getSearchResult: function(index_name, type, query) {
+        return client.search({
+          index: index_name,
+          type: type,
+          body: {
+            query: query
+          }
+        });
       }
     }
   }

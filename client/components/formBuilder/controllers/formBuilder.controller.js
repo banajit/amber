@@ -61,11 +61,44 @@
        }
        return true;
     }
-    var query = { match: {'name': 'anwar'} };
-    queryEngineSrv.getSearchResult('ambermeta', 'customer', query).then(function (data) {
-       console.log('queryCount', data);
-    });
+    var query = {
+                        "filter": {
+                            "bool": {
+                                "must": [
+                                    {
+                                        "term": {
+                                            "user": "kimchy"
+                                        }
+                                    },
+                                    {
+                                        "term": {
+                                            "user": "herald"
+                                        }
+                                    },
+                                    {
+                                        "range": {
+                                            "age": {
+                                                "gte": 10
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                };
+    /*queryEngineSrv.getSearchResult('bank', 'customer', query).then(function (data) {
+         console.log('queryCount', data);
+    },
+    function(data) {
+        console.log('Error: ', data.message);
+    });*/
 
+   /* queryEngineSrv.getSchemaMap('customer_new').then(function (data) {
+         console.log('queryCount', data);
+    },
+    function(data) {
+        console.log('Error: ', data.message);
+    });*/
 
 
 

@@ -16,10 +16,11 @@
         <label class="field-label">Model</label>
       </div>
       <md-input-container flex md-no-float>
-        <input name="fmodel" ng-model="form.model" required>
-        <div ng-messages="addfield.fmodel.$error">
-          <div ng-message="required">Model is required.</div>
-        </div>
+        <md-select ng-model="form.model" required>
+          <md-option ng-repeat="(key, value) in ModulePopup.schemaVars" value="{{key}}">
+            {{key}}
+          </md-option>
+        </md-select>
       </md-input-container>
     </div>
   </div>

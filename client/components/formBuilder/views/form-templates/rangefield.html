@@ -1,5 +1,5 @@
 <div class="range-fields-container" layout="row">
-  <div class="form-fields-container" layout="row" layout-wrap>
+  <div class="form-fields-container" flex layout="row" layout-wrap>
     <div class="field-label-container">
       <label class="field-label">{{obj.label}}</label>
       <span ng-if="obj.required" class="required-asterisk">*</span>
@@ -20,7 +20,7 @@
       </div>
     </md-input-container>
   </div>
-  <div class="form-fields-container" ng-if="obj.range.operator == '>' || obj.range.operator == '>=' || obj.range.operator == 'range'" layout="row" layout-wrap>
+  <div class="form-fields-container range-field-wrapper" flex ng-if="obj.range.operator == '>' || obj.range.operator == '>=' || obj.range.operator == 'range'" layout="row" layout-wrap>
     <div class="field-label-container">
       <label class="field-label">Min</label>
       <span class="required-asterisk">*</span>
@@ -32,7 +32,7 @@
       </div>
     </md-input-container>
   </div>
-  <div class="form-fields-container" ng-if="obj.range.operator == '<' || obj.range.operator == '<=' || obj.range.operator == 'range'" layout="row" layout-wrap>
+  <div class="form-fields-container range-field-wrapper" flex ng-if="obj.range.operator == '<' || obj.range.operator == '<=' || obj.range.operator == 'range'" layout="row" layout-wrap>
     <div class="field-label-container">
       <label class="field-label">Max</label>
       <span class="required-asterisk">*</span>
@@ -44,7 +44,7 @@
       </div>
     </md-input-container>
   </div>
-  <div class="form-fields-container" ng-if="obj.range.operator == '='" layout="row" layout-wrap>
+  <div class="form-fields-container range-field-wrapper" flex ng-if="obj.range.operator == '='" layout="row" layout-wrap>
     <div class="field-label-container">
       <label class="field-label">Value</label>
       <span class="required-asterisk">*</span>

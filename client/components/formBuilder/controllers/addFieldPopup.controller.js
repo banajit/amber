@@ -45,6 +45,13 @@
       $scope.form.type = $scope.formAttributes.type;
       $scope.form.key = formBuilderService.convertCamelCase($scope.form.label) + Date.now();
       $scope.form.template = $scope.formAttributes.template;
+      $scope.form.field_type = $scope.formAttributes.field_type;
+      if ($scope.form.field_type === 'fieldset') {
+        $scope.form.fields = {
+          'items': []
+        }
+      }
+      
       $scope.returnData = {
         'form': $scope.form
       };

@@ -25,7 +25,11 @@
     $scope.module = {
       'title': "",
       'description': "",
-      'form': []
+      'form': {
+        'fields': [
+          
+        ]
+      }
     };
     $scope.rangeOperators = {
       '>': '>',
@@ -35,22 +39,41 @@
       '<=': '<=',
       'range': 'Range'
     };
-    $scope.addFormField = function(obj) {
+    $scope.addFormField = function(index, obj) {
+      if (index !== -1) {
+        $mdDialog.show({
+          controller: 'addFieldPopupCtrl',
+          controllerAs: 'ModulePopup',
+          templateUrl: 'components/formBuilder/views/addFieldPopup.html',
+          parent: angular.element(document.body),
+          locals: {fieldObj: obj, moduleObj: $scope.module},
+          clickOutsideToClose: true
+        })
+        .then(function(data) {
+          $scope.fieldObject = data.form;
+          $scope.module.form.fields.push($scope.fieldObject);
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+      }
+    };
+    
+    $scope.addFieldsetField = function(index, item, list) {
       $mdDialog.show({
         controller: 'addFieldPopupCtrl',
         controllerAs: 'ModulePopup',
         templateUrl: 'components/formBuilder/views/addFieldPopup.html',
         parent: angular.element(document.body),
-        locals: {fieldObj: obj, moduleObj: $scope.module},
+        locals: {fieldObj: item, moduleObj: $scope.module},
         clickOutsideToClose: true
       })
       .then(function(data) {
         $scope.fieldObject = data.form;
-        $scope.module.form.push($scope.fieldObject);
+        list.push($scope.fieldObject);
       }, function() {
         $scope.status = 'You cancelled the dialog.';
       });
-    };
+    }
 
     //decide if component is visible
     $scope.isComponentVisible = function(component) {
@@ -78,6 +101,4 @@
   angular.module('amberApp')
     .controller('formBuilderCtrl', formBuilderCtrl);
 })(angular);
-
-
 

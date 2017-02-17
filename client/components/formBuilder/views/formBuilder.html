@@ -1,67 +1,115 @@
 <div id="main-content" layout="row">
   <div class="form-components" flex="75">
-    <div class="form-information">
-      <div layout="row">
-        <div class="form-fields-container" layout="row" layout-wrap>
-          <div class="field-label-container">
-            <label class="field-label">Form Name</label>
+    <form name="addModuleForm" novalidate>
+      <div class="form-information">
+        <div layout="row">
+          <div class="form-fields-container" layout="row" layout-wrap>
+            <div class="field-label-container">
+              <label class="field-label">Module Name</label>
+            </div>
+            <md-input-container flex md-no-float>
+              <input name="moduleName" ng-model="module.title" palceholder="" required aria-label="Module Name">
+              <div ng-messages="addModuleForm.moduleName.$error">
+                <div ng-message="required">Module name is required.</div>
+              </div>
+            </md-input-container>
           </div>
-          <md-input-container flex md-no-float>
-            <input ng-model="module.title" palceholder="" required>
-          </md-input-container>
-        </div>
-        <div class="form-fields-container" flex layout="row" layout-wrap style="margin-left: 20px;">
-          <div class="field-label-container">
-            <label class="field-label">Description</label>
+          <div class="form-fields-container" flex layout="row" layout-wrap style="margin-left: 20px;">
+            <div class="field-label-container">
+              <label class="field-label">Description</label>
+            </div>
+            <md-input-container flex md-no-float>
+              <input name="description" ng-model="module.description" aria-label="Module Description">
+            </md-input-container>
           </div>
-          <md-input-container flex md-no-float>
-            <input ng-model="module.description">
-          </md-input-container>
         </div>
       </div>
-    </div>
-    <div layout="row">
-      <div class="content-left" flex="20">
-        <v-accordion class="vAccordion--default">
-          <v-pane ng-repeat="item in formFields">
-            <v-pane-header>{{item.display_name}}</v-pane-header>
-            <v-pane-content>
-              <ul class="field-menu" dnd-list="item.fields">
-                <li ng-repeat="field in item.fields"
-                    dnd-draggable='field'
-                    dnd-effect-allowed="move"
-                  >
-                  {{field.name}}
+      <div layout="row">
+        <div class="content-left" flex="20">
+          <v-accordion class="vAccordion--default">
+            <v-pane ng-repeat="item in formFields">
+              <v-pane-header>{{item.display_name}}</v-pane-header>
+              <v-pane-content>
+                <ul class="field-menu" dnd-list="item.fields">
+                  <li ng-repeat="field in item.fields"
+                      dnd-draggable='field'
+                      dnd-effect-allowed="move"
+                    >
+                    {{field.name}}
+                  </li>
+                </ul>
+              </v-pane-content>
+            </v-pane>
+          </v-accordion>
+        </div>
+        <div class="content-middle" flex="80">
+          <div class="form-builder-container" gridster="gridsterOptions">
+            <script type="text/ng-template" id="list.html">
+              <ul class="drop-zone" dnd-list="list" dnd-drop="addFormField(index, item)">
+                <li ng-repeat="obj in list"
+                  gridster-item="obj"
+                  ng-include="obj.field_type + '.html'">
                 </li>
               </ul>
-            </v-pane-content>
-          </v-pane>
-        </v-accordion>
-      </div>
-      <div class="content-middle" flex="80">
-        <div class="form-builder-container" gridster="gridsterOptions">
-          <ul class="drop-zone" dnd-list="module.form" dnd-drop="addFormField(item)">
-            <li ng-if="isComponentVisible(obj)" ng-repeat="obj in module.form track by $index"
-              gridster-item="obj"
-              >
+            </script>
+            
+            <script type="text/ng-template" id="fieldsetField.html">
+              <ul class="drop-zone" dnd-list="list" dnd-drop="addFieldsetField(index, item, list)">
+                <li ng-repeat="obj in list"
+                  gridster-item="obj"
+                  ng-include="obj.field_type + '.html'">
+                </li>
+              </ul>
+            </script>
+            
+            <!-- This template is responsible for rendering a container element. It uses
+              the above list template to render each container column -->
+            <script type="text/ng-template" id="fieldset.html">
+              <div class="container-element">
+                <fieldset>
+                  <legend>{{obj.label}}</legend>
+                  <div class="column-new" ng-repeat="list in obj.fields" ng-include="'fieldsetField.html'" gridster="gridsterOptions"></div>
+                </fieldset>
+              </div>
+            </script>
+            
+            <!-- Template for a normal list item -->
+            <script type="text/ng-template" id="field.html">
               <ng-include src="obj.template"></ng-include>
-            </li>
-            <li class="dndPlaceholder">
-              Drop field here
-            </li>
-          </ul>
-        </div>
-        <div class="form-builder-action" layout="row" layout-align="center center">
-          <md-button class="md-raised md-primary" ng-click="cancelForm()">Cancel</md-button>
-          <md-button class="md-raised md-primary" ng-click="addForm()">Save</md-button>
+            </script>
+            
+            <!--div class="dropzone" style="min-height: 100px;" ng-include="'list.html'"-->
+            <div ng-repeat="list in module.form" class="col-md-6">
+              <div ng-include="'list.html'"></div>
+            </div>
+            
+            <!--ul
+              class="drop-zone"
+              dnd-list="module.form"
+              dnd-drop="addFormField(item)"
+              >
+              <li ng-if="isComponentVisible(obj)" ng-repeat="obj in module.form track by $index">
+                <ng-include src="obj.template"></ng-include>
+              </li>
+              <li class="dndPlaceholder">
+                Drop field here
+              </li>
+            </ul-->
+          </div>
+          <div class="form-builder-action" layout="row" layout-align="center center">
+            <md-button class="md-raised md-primary" ng-click="cancelForm()">Cancel</md-button>
+            <md-button class="md-raised md-primary" ng-click="addForm()" ng-disabled="!addModuleForm.$valid || module.form.fields.length == 0">Save</md-button>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   </div>
+  
   <div class="content-right" flex="25">
     <h3 class="page-header">Sample JSON</h3>
     <div class="json-container">
       <pre>{{showAsJson}}</pre>
     </div>
   </div>
+  
 </div>

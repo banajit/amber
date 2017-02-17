@@ -5,7 +5,7 @@
 angular.module('amberApp')
   .service('client', ['esFactory', 'CONFIG', function (esFactory, CONFIG) {
     return esFactory({
-      host: CONFIG.elasticConfig.host
+      host: CONFIG.elasticConfig.host,
     });
   }]);
 

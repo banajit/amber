@@ -2,7 +2,7 @@
 'use strict';
 (function (angular) {
 
-  function addFieldPopupCtrl($scope, $mdDialog, locals, formBuilderService) {
+  function addFieldPopupCtrl($scope, $mdDialog, locals, formBuilderService, queryEngineSrv) {
     /**
      * Controller variable
      */
@@ -36,6 +36,18 @@
         ModulePopup.isFormValid = false;
       }
     }
+
+    //get list of schema variables
+    ModulePopup.schemaVars = {};
+    queryEngineSrv.getVariableList().then(function (data) {
+      if(data.status == 404) {
+        console.log('Handle Error: ', data.message);
+      }
+      else {
+        ModulePopup.schemaVars = data;
+      }
+    });
+
 
     //check for valid json
     ModulePopup.validateJson = function(text) {
